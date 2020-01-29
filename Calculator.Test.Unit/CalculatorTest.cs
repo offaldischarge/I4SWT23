@@ -28,7 +28,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void MultiplyTest()
+        public void Multiply_5and4_Result20()
         {
             var uut = new CalculatorExercise.Calculator();
 

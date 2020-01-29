@@ -36,6 +36,14 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void Multiply_5and0_Result0()
+        {
+            var uut = new CalculatorExercise.Calculator();
+
+            Assert.That(uut.Multiply(5, 0), Is.EqualTo(0));
+        }
+
+        [Test]
         public void SubtractTest()
         {
             Assert.That(uut.Subtract(10,7), Is.EqualTo(3));

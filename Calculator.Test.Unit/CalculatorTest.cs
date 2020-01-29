@@ -48,6 +48,18 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Subtract(10,7), Is.EqualTo(3));
         }
+
+        [Test]
+        public void Division_10and2_Return5()
+        {
+            Assert.That(uut.Divide(10,2), Is.EqualTo(5));
+        }
+
+        //[Test]
+        //public void Division_10and0_ReturnException()
+        //{
+        //    Assert.That(uut.Divide(10, 0), Throws.Exception);
+        //}
     }
 }
     

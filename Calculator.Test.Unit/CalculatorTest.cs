@@ -55,11 +55,11 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Divide(10,2), Is.EqualTo(5));
         }
 
-        //[Test]
-        //public void Division_10and0_ReturnException()
-        //{
-        //    Assert.That(uut.Divide(10, 0), Throws.Exception);
-        //}
+        [Test]
+        public void Division_10and0_ReturnException()
+        {
+            Assert.That(() => uut.Divide(10, 0), Throws.TypeOf< System.DivideByZeroException>());
+        }
     }
 }
     

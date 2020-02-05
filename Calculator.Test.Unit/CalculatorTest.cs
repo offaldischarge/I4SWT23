@@ -114,7 +114,6 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
-
     }
 }
     

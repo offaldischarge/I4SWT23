@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -73,6 +74,32 @@ namespace Calculator.Test.Unit
             Assert.That(() => uut.Divide(10, 0.0), Throws.TypeOf<System.DivideByZeroException>());
         }
 
+        [Test]
+        public void Power_Raise10ToPowerOf2_Return100()
+        {
+            Assert.That(uut.Power(10, 2), Is.EqualTo(100));
+        }
+
+        [Test]
+        public void Power_Raise10ToPowerOfMinus2_Return0Point01()
+        {
+            Assert.That(uut.Power(10,-2), Is.EqualTo(0.01));
+        }
+
+        [Test]
+        public void Power_RaiseMinus10ToPowerOf2_Return100()
+        {
+            Assert.That(uut.Power(-10, 2), Is.EqualTo(100));
+        }
+
+
+        [Test]
+        public void Clear_ClearAccumulatorToZero_ReturnZero()
+        {
+            uut.Add(3, 4);
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
     }
 }
     

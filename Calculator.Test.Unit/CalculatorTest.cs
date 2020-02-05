@@ -72,7 +72,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Subtract_10andNegative7_Result3()
+        public void Subtract_10andNegative7_Result17()
         {
             Assert.That(uut.Subtract(10, -7), Is.EqualTo(17));
         }
@@ -114,7 +114,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Power_Raise10ToPowerOfMinus2_Return0Point01()
+        public void Power_Raise10ToPowerOfMinus2_ReturnZeroPoint01()
         {
             Assert.That(uut.Power(10,-2), Is.EqualTo(0.01));
         }
@@ -123,6 +123,12 @@ namespace Calculator.Test.Unit
         public void Power_RaiseMinus10ToPowerOf2_Return100()
         {
             Assert.That(uut.Power(-10, 2), Is.EqualTo(100));
+        }
+
+        [Test]
+        public void Power_RaiseMinus10ToPowerOfMinus4_ReturnZeroPoint0001()
+        {
+            Assert.That(uut.Power(-10, -4), Is.EqualTo(0.0001));
         }
 
 

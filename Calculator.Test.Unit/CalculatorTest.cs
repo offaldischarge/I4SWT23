@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,6 @@ namespace Calculator.Test.Unit
         [Test]
         public void AddPositiveWithNegative()
         {
-            //Arrange
-            var uut = new CalculatorExercise.Calculator();
-
             //Act + Assert
             Assert.That(uut.Add(3, -5), Is.EqualTo(-2));
         }
@@ -30,16 +28,12 @@ namespace Calculator.Test.Unit
         [Test]
         public void Multiply_5and4_Result20()
         {
-            var uut = new CalculatorExercise.Calculator();
-
             Assert.That(uut.Multiply(5, 4), Is.EqualTo(20));
         }
 
         [Test]
         public void Multiply_5and0_Result0()
         {
-            var uut = new CalculatorExercise.Calculator();
-
             Assert.That(uut.Multiply(5, 0), Is.EqualTo(0));
         }
 
@@ -73,6 +67,37 @@ namespace Calculator.Test.Unit
             Assert.That(() => uut.Divide(10, 0.0), Throws.TypeOf<System.DivideByZeroException>());
         }
 
+        [Test]
+        public void Accumulator_InitialValue_ReturnZero()
+        {
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Accumulator_Addition_Return5()
+        {
+            //Act
+            uut.Add(2, 3);
+
+            //Assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Accumulator_Subtraction_Return5()
+        {
+            uut.Subtract(10, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Accumulator_Multiplication_Return25()
+        {
+            uut.Multiply(5, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
+        }
     }
 }
     

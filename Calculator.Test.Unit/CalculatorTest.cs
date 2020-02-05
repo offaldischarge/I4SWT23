@@ -116,6 +116,18 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void Power_Raise10ToPowerOf2_Return100()
+        {
+            Assert.That(uut.Power(10, 2), Is.EqualTo(100));
+        }
+
+        [Test]
+        public void Power_Raise10ToPowerOfMinus2_ReturnZeroPoint01()
+        {
+            Assert.That(uut.Power(10, -2), Is.EqualTo(0.01));
+        }
+
+        [Test]
         public void Power_RaiseMinus10ToPowerOfMinus4_ReturnZeroPoint0001()
         {
             Assert.That(uut.Power(-10, -4), Is.EqualTo(0.0001));
@@ -128,6 +140,21 @@ namespace Calculator.Test.Unit
             uut.Add(3, 4);
             uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Clear_ClearAccumulatorAfterSubtract_ReturnZero()
+        {
+            uut.Subtract(2, 5);
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Clear_ClearAccumulator_ReturnZero()
+        {
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.Zero);
         }
 
         [Test]

@@ -49,6 +49,11 @@ namespace CalculatorExercise
         }
 
         public double Accumulator { get; private set; }
+
+        public void Clear()
+        {
+            Accumulator = 0;
+        }
     }
 
     class Program

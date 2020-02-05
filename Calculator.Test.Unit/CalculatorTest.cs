@@ -133,11 +133,26 @@ namespace Calculator.Test.Unit
 
 
         [Test]
-        public void Clear_ClearAccumulatorToZero_ReturnZero()
+        public void Clear_ClearAccumulatorAfterAdd_ReturnZero()
         {
             uut.Add(3, 4);
             uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Clear_ClearAccumulatorAfterSubtract_ReturnZero()
+        {
+            uut.Subtract(2, 5);
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Clear_ClearAccumulator_ReturnZero()
+        {
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.Zero);
         }
     }
 }

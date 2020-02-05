@@ -41,7 +41,7 @@ namespace CalculatorExercise
         {
             if (divisor == 0)
             {
-                //throw new System.DivideByZeroException();
+                throw new System.DivideByZeroException();
             }
 
             Accumulator = dividend / divisor;

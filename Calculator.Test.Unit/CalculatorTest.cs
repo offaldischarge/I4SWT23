@@ -114,6 +114,32 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
+
+        [Test]
+        public void Accumulator_Addition_Return5()
+        {
+            //Act
+            uut.Add(2, 3);
+
+            //Assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Accumulator_Subtraction_Return5()
+        {
+            uut.Subtract(10, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Accumulator_Multiplication_Return25()
+        {
+            uut.Multiply(5, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
+        }
     }
 }
     

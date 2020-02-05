@@ -56,10 +56,23 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void Division_10and0point1_Return100()
+        {
+            Assert.That(uut.Divide(10, 0.1), Is.EqualTo(100));
+        }
+
+        [Test]
         public void Division_10and0_ReturnException()
         {
             Assert.That(() => uut.Divide(10, 0), Throws.TypeOf< System.DivideByZeroException>());
         }
+
+        [Test]
+        public void Division_10and0point0_ReturnException()
+        {
+            Assert.That(() => uut.Divide(10, 0.0), Throws.TypeOf<System.DivideByZeroException>());
+        }
+
     }
 }
     

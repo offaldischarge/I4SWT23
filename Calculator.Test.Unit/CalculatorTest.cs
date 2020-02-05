@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -49,6 +50,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void Multiply_5and0_Result0()
         {
+            var uut = new CalculatorExercise.Calculator();
 
             Assert.That(uut.Multiply(5, 0), Is.EqualTo(0));
         }
@@ -108,19 +110,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Power_Raise10ToPowerOf2_Return100()
-        {
-            Assert.That(uut.Power(10, 2), Is.EqualTo(100));
-        }
-
-        [Test]
-        public void Power_Raise10ToPowerOfMinus2_ReturnZeroPoint01()
-        {
-            Assert.That(uut.Power(10,-2), Is.EqualTo(0.01));
-        }
-
-        [Test]
-        public void Power_RaiseMinus10ToPowerOf2_Return100()
+        public void Accumulator_InitialValue_ReturnZero()
         {
             Assert.That(uut.Power(-10, 2), Is.EqualTo(100));
         }

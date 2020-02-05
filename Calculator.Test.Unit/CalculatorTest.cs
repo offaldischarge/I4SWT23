@@ -131,18 +131,29 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Clear_ClearAccumulatorAfterSubtract_ReturnZero()
+        public void Accumulator_Addition_Return5()
         {
-            uut.Subtract(2, 5);
-            uut.Clear();
-            Assert.That(uut.Accumulator, Is.EqualTo(0));
+            //Act
+            uut.Add(2, 3);
+
+            //Assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
         }
 
         [Test]
-        public void Clear_ClearAccumulator_ReturnZero()
+        public void Accumulator_Subtraction_Return5()
         {
-            uut.Clear();
-            Assert.That(uut.Accumulator, Is.Zero);
+            uut.Subtract(10, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Accumulator_Multiplication_Return25()
+        {
+            uut.Multiply(5, 5);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
         }
     }
 }

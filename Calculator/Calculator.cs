@@ -47,8 +47,6 @@ namespace CalculatorExercise
             Accumulator = dividend / divisor;
             return Accumulator;
         }
-
-        public double Accumulator { get; private set; }
     }
 
     class Program

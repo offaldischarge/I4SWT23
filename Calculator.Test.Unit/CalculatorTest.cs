@@ -19,6 +19,18 @@ namespace Calculator.Test.Unit
         {
             uut = new CalculatorExercise.Calculator();
         }
+        
+        [TestCase(4,-2, 2)]
+        [TestCase(-3, -12, -15)]
+        [TestCase(8,22, 30)]
+        public void Add_Test(int n1, int n2, int result)
+        {
+
+            //Act + Assert
+            Assert.That(uut.Add(n1, n2), Is.EqualTo(result));
+        }
+
+
         [Test]
         public void Add_4andNegative2_Result2()
         {

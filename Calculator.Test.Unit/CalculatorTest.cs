@@ -97,7 +97,7 @@ namespace Calculator.Test.Unit
 
 
         //Division tests
-       // [Test]
+        [Test]
         public void Division_10and2_Return5()
         {
             Assert.That(uut.Divide(10,2), Is.EqualTo(5));
